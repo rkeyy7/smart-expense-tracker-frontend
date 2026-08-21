@@ -109,16 +109,16 @@ export default function DashboardPage() {
   if (cargando) return <div className="min-h-screen flex items-center justify-center">Cargando...</div>;
 
   return (
-    <div className="h-dvh w-full overflow-hidden bg-background">
-      <SidebarProvider>
+    <div className="h-dvh w-full overflow-x-hidden bg-background">
+      <SidebarProvider className="h-full min-h-0">
         <AppSidebar />
-        <SidebarInset className="flex flex-col flex-1 min-w-0 overflow-hidden h-full">
+        <SidebarInset className="flex h-full min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
           <header className="shrink-0 z-10 flex min-h-16 flex-wrap items-center gap-2 border-b bg-background/80 px-3 py-2 sm:gap-3 sm:px-4 sm:py-0">
             <SidebarTrigger />
             <div className="min-w-0 flex-1 sm:flex-none">
               <h1 className="truncate text-sm font-semibold sm:text-base">Smart Expense Tracker</h1>
             </div>
-            <div className="order-3 flex basis-full items-center justify-end gap-2 sm:order-none sm:ml-auto sm:basis-auto">
+            <div className="order-3 flex basis-full items-center justify-end gap-2 sm:order-0 sm:ml-auto sm:basis-auto">
               <ReportPdfDialog />
               <AddTransactionDialog onAdd={handleAdd} />
               <Button variant="ghost" size="sm" onClick={handleLogout} aria-label="Cerrar sesión" title="Cerrar sesión">
@@ -127,7 +127,7 @@ export default function DashboardPage() {
             </div>
           </header>
 
-          <main className="flex-1 min-w-0 overflow-y-auto p-3 sm:p-4 md:p-6 flex flex-col gap-4 md:gap-6 bg-slate-50/30">
+          <main className="min-h-0 min-w-0 flex-1 overflow-y-auto p-3 sm:p-4 md:p-6 flex flex-col gap-4 md:gap-6 bg-slate-50/30">
             <SummaryCards ingresos={ingresos} gastos={gastos} balanceNeto={balanceNeto} />
             
             <div className="grid gap-6 lg:grid-cols-2 items-start">
