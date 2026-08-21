@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000",
+  // Aquí está la clave: busca la variable de Vercel primero, si no existe, usa localhost
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000",
 });
 
 api.interceptors.request.use((config) => {
