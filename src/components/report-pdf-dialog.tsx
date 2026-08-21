@@ -73,7 +73,8 @@ export function ReportPdfDialog() {
                 <div>
                     <Button variant="outline">
                         <FileDown className="w-4 h-4 mr-2" />
-                        Reporte PDF
+                        <span className="hidden sm:inline">Reporte PDF</span>
+                        <span className="sm:hidden">PDF</span>
                     </Button>
                 </div>
             </DialogTrigger>

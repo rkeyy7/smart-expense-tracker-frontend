@@ -70,7 +70,8 @@ export function AddTransactionDialog({ onAdd }: AddTransactionDialogProps) {
                 <div>
                     <Button>
                         <Plus className="w-4 h-4 mr-2" />
-                        Añadir Movimiento
+                        <span className="hidden sm:inline">Añadir Movimiento</span>
+                        <span className="sm:hidden">Añadir</span>
                     </Button>
                 </div>
             </DialogTrigger>
