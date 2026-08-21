@@ -14,6 +14,7 @@ import { AppSidebar } from "@/components/app-sidebar"
 import { SummaryCards } from "@/components/summary-cards"
 import { TransactionsTable } from "@/components/transactions-table"
 import { AddTransactionDialog } from "@/components/add-transaction-dialog"
+import { ReportPdfDialog } from "@/components/report-pdf-dialog"
 import { ChartCategorias } from "@/components/chart-categorias"
 import { type Transaccion } from "@/lib/transactions"
 import { toast } from "sonner"
@@ -118,6 +119,7 @@ export default function DashboardPage() {
               <h1 className="text-base font-semibold">Smart Expense Tracker</h1>
             </div>
             <div className="ml-auto flex items-center gap-2">
+              <ReportPdfDialog />
               <AddTransactionDialog onAdd={handleAdd} />
               <Button variant="ghost" size="sm" onClick={handleLogout}>
                 <LogOut className="w-4 h-4 mr-2" /> Cerrar
